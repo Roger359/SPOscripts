@@ -2,7 +2,7 @@
 
 #Variables for Processing
 $SiteURL = "https://cpvenoffice365.sharepoint.com/sites/qhse"
-$ListName="Entrenamientos2"
+$ListName="Entrenamientos3"
  
 #Add 'Name' - Single Line of Text Field
 $FieldType = [Microsoft.SharePoint.SPFieldType]::Text
@@ -72,6 +72,4 @@ Function Add-FieldToList($SiteURL,$ListName, $FieldName, $FieldType, $IsRequired
     }
 }
  
-#Parameters 
-$SiteURL="https://intranet.crescent.com/"
-$ListName = "Customer Directory"
+

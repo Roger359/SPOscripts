@@ -4,7 +4,7 @@ Add-Type -Path "C:\Program Files\Common Files\Microsoft Shared\Web Server Extens
   
 #Variables for Processing
 $SiteURL = "https://cpvenoffice365.sharepoint.com/sites/qhse"
-$ListName="Entrenamientos2"
+$ListName="Entrenamientos5"
  
 #Setup Credentials to connect
 $Cred = Get-Credential

@@ -7,6 +7,7 @@ $SiteURL = "https://cpvenoffice365.sharepoint.com/sites/qhse"
 $ListName="Entrenamientos5"
  
 #Setup Credentials to connect
+$user = "roger.acosta@cpven.com"
 $Cred = Get-Credential
 $Cred = New-Object Microsoft.SharePoint.Client.SharePointOnlineCredentials($Cred.UserName,$Cred.Password)
  
@@ -14,8 +15,9 @@ Try {
     #Setup the context
     $Ctx = New-Object Microsoft.SharePoint.Client.ClientContext($SiteURL)
     $Ctx.Credentials = $Cred
+    write-host $Ctx
      
-    #Get All Lists 
+    #Get All Lists from QHSE 
     $Lists = $Ctx.Web.Lists
     $Ctx.Load($Lists)
     $Ctx.ExecuteQuery()
@@ -25,6 +27,7 @@ Try {
     { 
         #sharepoint online powershell create list
         $ListInfo = New-Object Microsoft.SharePoint.Client.ListCreationInformation
+        Write-Host $ListInfo
         $ListInfo.Title = $ListName
         $ListInfo.TemplateType = 100 #Custom List
         $List = $Ctx.Web.Lists.Add($ListInfo)
